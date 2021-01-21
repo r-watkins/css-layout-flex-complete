@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Layouts with Flex</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.16/esri/themes/light/main.css"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <script src="https://js.arcgis.com/4.16/"></script>
+    <script>
+      require(["esri/views/MapView", "esri/WebMap"], function (
+        MapView,
+        WebMap
+      ) {
+        var webmap = new WebMap({
+          portalItem: {
+            id: "f2e9b762544945f390ca4ac3671cfa72"
+          }
+        });
+        var view = new MapView({
+          map: webmap,
+          container: "mapView"
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <main class="main">
+      <header class="header">
+        <div class="branding">
+          <img class="logo" src="images/globe.svg" alt="Super Cool App Logo" />
+          <h4 class="title">Super Cool App</h4>
+        </div>
+
+        <img class="user" src="images/user.svg" alt="Current user thumbnail" />
+      </header>
+
+      <div class="container">
+        <aside class="aside">
+          <button class="button">
+            <img class="logo" src="images/flash.svg" alt="Coolness icon" />
+            <p>Coolness</p>
+          </button>
+        </aside>
+
+        <div id="mapView"></div>
+      </div>
+
+      <footer class="footer">I'm a footer</footer>
+    </main>
+  </body>
+</html>
